@@ -3,6 +3,7 @@ import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
 import BackToTop from '../../components/feature/BackToTop';
 import ArticleCard from '../../components/base/ArticleCard';
+import OptimizedImage from '../../components/base/OptimizedImage';
 import { allArticles, categories } from '../../mocks/all-articles';
 import { useSEO, generateWebSiteSchema } from '../../utils/seo';
 
@@ -27,10 +28,12 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <OptimizedImage
             src="https://readdy.ai/api/search-image?query=modern%20abstract%20digital%20gaming%20background%20with%20vibrant%20green%20gold%20black%20colors%20futuristic%20technology%20pattern%20casino%20sports%20betting%20theme%20high%20energy%20dynamic%20composition%20professional%20sleek%20design&width=1920&height=1080&seq=hero-bg-001&orientation=landscape"
             alt="Hero Background"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full"
+            objectFit="cover"
+            priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
         </div>

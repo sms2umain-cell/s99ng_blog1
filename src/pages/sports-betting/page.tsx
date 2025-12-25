@@ -2,6 +2,7 @@ import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
 import BackToTop from '../../components/feature/BackToTop';
 import ArticleCard from '../../components/base/ArticleCard';
+import OptimizedImage from '../../components/base/OptimizedImage';
 import { allArticles } from '../../mocks/all-articles';
 import { useSEO, generateBreadcrumbSchema } from '../../utils/seo';
 
@@ -30,10 +31,12 @@ const SportsBettingPage = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <OptimizedImage
             src="https://readdy.ai/api/search-image?query=dynamic%20sports%20betting%20football%20stadium%20action%20scene%20with%20green%20field%20bright%20lights%20energetic%20atmosphere%20professional%20sports%20photography%20modern%20composition&width=1920&height=600&seq=sports-hero-001&orientation=landscape"
             alt="Sports Betting"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full"
+            objectFit="cover"
+            priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black"></div>
         </div>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import OptimizedImage from './OptimizedImage';
 
 interface ArticleCardProps {
   id: number;
@@ -27,23 +28,23 @@ const ArticleCard = ({
   tags,
 }: ArticleCardProps) => {
   return (
-    <article className="group bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/10">
-      <Link to={`/article/${slug}`} className="block cursor-pointer">
-        <div className="relative h-48 overflow-hidden">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <Link
-            to={`/${categorySlug}`}
-            className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-amber-500 to-yellow-500 text-black text-xs font-semibold rounded-full cursor-pointer hover:from-amber-600 hover:to-yellow-600 transition-all whitespace-nowrap"
-          >
+    <Link
+      to={`/article/${slug}`}
+      className="group bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/10 cursor-pointer"
+    >
+      <div className="relative h-48 overflow-hidden">
+        <OptimizedImage
+          src={image}
+          alt={title}
+          className="w-full h-full"
+          objectFit="cover"
+        />
+        <div className="absolute top-4 left-4">
+          <span className="px-3 py-1 bg-amber-500 text-black text-xs font-semibold rounded-full">
             {category}
-          </Link>
+          </span>
         </div>
-      </Link>
+      </div>
 
       <div className="p-6">
         <Link to={`/article/${slug}`} className="cursor-pointer">
@@ -82,7 +83,7 @@ const ArticleCard = ({
           ))}
         </div>
       </div>
-    </article>
+    </Link>
   );
 };
 

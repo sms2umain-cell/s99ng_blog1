@@ -2,6 +2,7 @@ import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
 import BackToTop from '../../components/feature/BackToTop';
 import ArticleCard from '../../components/base/ArticleCard';
+import OptimizedImage from '../../components/base/OptimizedImage';
 import { allArticles } from '../../mocks/all-articles';
 import { useSEO, generateBreadcrumbSchema } from '../../utils/seo';
 
@@ -30,10 +31,12 @@ const SlotGamesPage = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <OptimizedImage
             src="https://readdy.ai/api/search-image?query=colorful%20vibrant%20slot%20machine%20casino%20gaming%20abstract%20background%20with%20golden%20coins%20bright%20lights%20purple%20pink%20colors%20exciting%20entertainment%20atmosphere&width=1920&height=600&seq=slot-hero-001&orientation=landscape"
             alt="Slot Games"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full"
+            objectFit="cover"
+            priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black"></div>
         </div>
