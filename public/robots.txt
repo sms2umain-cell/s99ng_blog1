@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /sports-betting
+Allow: /slot-games
+Allow: /live-casino
+Allow: /game-tips-strategy
+Allow: /beginner-guide
+Allow: /article/
+Allow: /about
+Disallow: /privacy
+
+Sitemap: https://example.com/sitemap.xml
